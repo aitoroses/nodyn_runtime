@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="nodyn:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/nodyn_jar</output-path>
+    <root id="archive" name="nodyn.jar">
+      <element id="module-output" name="nodyn" />
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="nodyn" />
+      </element>
+      <element id="directory" name="scripts">
+        <element id="dir-copy" path="$PROJECT_DIR$/scripts" />
+      </element>
+    </root>
+  </artifact>
+</component>

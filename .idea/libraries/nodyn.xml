@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="nodyn">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/nodyn.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
