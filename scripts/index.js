@@ -10,7 +10,6 @@ server_log = debug('nodyn:server_log');
 
 // Generate a instance of the java EJB Mock
 var RuntimeService = new org.nodyn.EJBMock();
-log(RuntimeService);
 
 var PORT = 1337;
 
@@ -24,8 +23,15 @@ http.createServer(function(req, res) {
     }
 
     server_log('Responding to %s %s', req.method, req.url);
+    var tickets = RuntimeService.fetchAllTickets();
+    var result = tickets.map(function(ticket) {
+        return {
+            id: ticket.getTicketId()
+        }
+    });
+    server_log(tickets);
     res.writeHead(200, {'Content-Type': 'application/json'});
-    res.end( JSON.stringify( RuntimeService.fetchAllTickets() ) );
+    res.end( JSON.stringify( result ) );
 
 }).listen(PORT, '127.0.0.1');
 
